@@ -5,5 +5,10 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "eslint.nodePath": ".yarn/sdks"
+  "eslint.nodePath": ".yarn/sdks",
+  "[markdown]": {
+    "editor.wordWrapColumn": 200
+  },
+  "editor.wordWrapColumn": 200,
+  "editor.wordWrap": "on"
 }

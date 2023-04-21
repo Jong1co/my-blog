@@ -3,7 +3,7 @@
     "title": "2021년 리뷰",
     "description": "2021년 한해 동안 배운 기술들, 생각들 정리",
     "date": "2021-12-31",
-    "category": ["my story"],
+    "category": ["React", "javascript"],
     "path": "review-2021",
     "featured": false,
     "thumbnail": null
@@ -30,7 +30,7 @@
     "title": "Node 기초 정리",
     "description": "기본 적인 Node 사용법에 대해 전부 정리!",
     "date": "2022-08-21",
-    "category": ["backend"],
+    "category": ["Frontend", "typescript"],
     "path": "node-basic",
     "featured": false,
     "thumbnail": null
@@ -39,7 +39,7 @@
     "title": "2022년 리뷰",
     "description": "2022년 한해 동안 배운 기술들, 생각들 정리",
     "date": "2022-12-31",
-    "category": ["my story"],
+    "category": ["React"],
     "path": "review-2022",
     "featured": false,
     "thumbnail": null
@@ -48,7 +48,7 @@
     "title": "Node 프로 팁!",
     "description": "노드를 프로처럼 사용하기 위한 모든 팁들을 정리!",
     "date": "2023-04-10",
-    "category": ["backend"],
+    "category": ["Frontend"],
     "path": "node-pro-tips",
     "featured": true,
     "thumbnail": null
@@ -57,7 +57,7 @@
     "title": "리액트 Best Practice!",
     "description": "리액트를 정확하게 사용하는 방법들을 정리",
     "date": "2023-04-15",
-    "category": ["frontend"],
+    "category": ["Frontend"],
     "path": "best-react-practices",
     "featured": true,
     "thumbnail": null
@@ -66,7 +66,7 @@
     "title": "리액트 18버전!",
     "description": "리액트 18에 추가된 사항들 정리",
     "date": "2023-05-02",
-    "category": ["frontend"],
+    "category": ["Frontend"],
     "path": "react18-walkthrough",
     "featured": true,
     "thumbnail": null
@@ -75,7 +75,7 @@
     "title": "2023년 리뷰",
     "description": "2023년 한해 동안 배운 기술들, 생각들 정리",
     "date": "2023-12-31",
-    "category": ["my story"],
+    "category": ["React"],
     "path": "review-2023",
     "featured": true,
     "thumbnail": null
