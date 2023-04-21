@@ -1,0 +1,23 @@
+import { getContent } from '@/service/content';
+import React from 'react';
+import { MarkdownViewer } from '../components/MarkdownViewer';
+
+type ContentPageProps = {
+  params: {
+    slug: string;
+  };
+};
+
+const ContentPage = async ({ params: { slug } }: ContentPageProps) => {
+  const content = await getContent(slug);
+
+  return (
+    <>
+      <div className="px-4">
+        <MarkdownViewer content={content} />
+      </div>
+    </>
+  );
+};
+
+export default ContentPage;
