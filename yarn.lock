@@ -153,6 +153,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next/mdx@npm:^13.3.1":
+  version: 13.3.1
+  resolution: "@next/mdx@npm:13.3.1"
+  dependencies:
+    source-map: ^0.7.0
+  peerDependencies:
+    "@mdx-js/loader": ">=0.15.0"
+    "@mdx-js/react": ">=0.15.0"
+  peerDependenciesMeta:
+    "@mdx-js/loader":
+      optional: true
+    "@mdx-js/react":
+      optional: true
+  checksum: 64af714934b66099002b1ae69f18503db050d7c358ba51e1a6ce8e8d6ac348996a27f775ab340822be9daafb4732001176ca81157d021bd3c4f5c054fa96bd62
+  languageName: node
+  linkType: hard
+
 "@next/swc-darwin-arm64@npm:13.3.0":
   version: 13.3.0
   resolution: "@next/swc-darwin-arm64@npm:13.3.0"
@@ -3389,6 +3406,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "my-blog@workspace:."
   dependencies:
+    "@next/mdx": ^13.3.1
     "@tailwindcss/typography": ^0.5.9
     "@types/node": 18.15.11
     "@types/react": 18.0.37
@@ -3398,6 +3416,7 @@ __metadata:
     eslint: 8.38.0
     eslint-config-next: 13.3.0
     next: 13.3.0
+    nodemailer: ^6.9.1
     postcss: 8.4.22
     react: 18.2.0
     react-dom: 18.2.0
@@ -3528,6 +3547,13 @@ __metadata:
   version: 2.0.10
   resolution: "node-releases@npm:2.0.10"
   checksum: d784ecde25696a15d449c4433077f5cce620ed30a1656c4abf31282bfc691a70d9618bae6868d247a67914d1be5cc4fde22f65a05f4398cdfb92e0fc83cadfbc
+  languageName: node
+  linkType: hard
+
+"nodemailer@npm:^6.9.1":
+  version: 6.9.1
+  resolution: "nodemailer@npm:6.9.1"
+  checksum: b1b9670afc170b4454665abae3fc9acd7e781adb9f579d1c2cd991bf75c647ebe345593f8a057e48d7bf9e4c9a9218869f87db8fb7171c614f557000ab654572
   languageName: node
   linkType: hard
 
@@ -4417,6 +4443,13 @@ __metadata:
   version: 1.0.2
   resolution: "source-map-js@npm:1.0.2"
   checksum: c049a7fc4deb9a7e9b481ae3d424cc793cb4845daa690bc5a05d428bf41bf231ced49b4cf0c9e77f9d42fdb3d20d6187619fc586605f5eabe995a316da8d377c
+  languageName: node
+  linkType: hard
+
+"source-map@npm:^0.7.0":
+  version: 0.7.4
+  resolution: "source-map@npm:0.7.4"
+  checksum: 01cc5a74b1f0e1d626a58d36ad6898ea820567e87f18dfc9d24a9843a351aaa2ec09b87422589906d6ff1deed29693e176194dc88bcae7c9a852dc74b311dbf5
   languageName: node
   linkType: hard
 

@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx,md}'],
   theme: {
     extend: {
+      screens: {
+        mobile: '520px',
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
