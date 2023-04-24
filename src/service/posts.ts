@@ -8,8 +8,14 @@ export const getPosts = async (query: string = ''): Promise<PostCardInfo[]> => {
   const posts: PostCardInfo[] = await JSON.parse(data);
 
   if (query === '') {
-    return posts;
+    return posts.map((post) => {
+      return { ...post, thumbnail: `/images/posts/${post.path}.png` };
+    });
   }
 
-  return posts.filter((post) => post.category.map((tag) => tag.toLowerCase()).includes(query));
+  return posts
+    .filter((post) => post.category.map((tag) => tag.toLowerCase()).includes(query))
+    .map((post) => {
+      return { ...post, thumbnail: `/images/posts/${post.path}.png` };
+    });
 };
