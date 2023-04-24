@@ -1,6 +1,6 @@
 import { getContent } from '@/service/content';
 import React from 'react';
-import { MarkdownViewer } from '../components/MarkdownViewer';
+import { MarkdownViewer } from '@/_common/MarkdownViewer/MarkdownViewer';
 
 type ContentPageProps = {
   params: {
