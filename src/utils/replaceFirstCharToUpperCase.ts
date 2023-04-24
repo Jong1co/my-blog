@@ -1,3 +1,3 @@
 export const replaceFirstCharToUpperCase = (char: string) => {
-  return char.replace(/^[a-z]/, (char) => char.toUpperCase());
+  return decodeURIComponent(char.replace(/^[a-z]/, (char) => char.toUpperCase()));
 };
