@@ -7,9 +7,9 @@ import { Tag } from '../Tag';
 const PostCard = ({ title, description, date, category, path, featured, thumbnail }: PostCardInfo) => {
   return (
     <Link href={`/content/${path}`}>
-      <li className="h-40 duration-150 ease-in-out border rounded-lg cursor-pointer bg-neutral-30 border-neutral-70 hover:bg-neutral-40">
-        {thumbnail !== null && <Image src={thumbnail} alt="" width={200} />}
-        <div className="flex flex-col gap-3 p-4">
+      <li className="flex w-full h-40 duration-150 ease-in-out border rounded-lg cursor-pointer bg-neutral-30 border-neutral-70 hover:bg-neutral-40">
+        {thumbnail !== null && <Image src={thumbnail} alt={path} width={200} height={156} className="rounded-l-lg opacity-70" />}
+        <div className="flex flex-col w-full gap-3 p-4 ">
           <div className="ft-title-01">{title}</div>
           <div className="ft-body-02 text-neutral-80 h-14">{description}</div>
           <div className="flex items-center justify-between">
