@@ -65,9 +65,12 @@
   }
   ul,
   li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    /* list-style: disc; */
+    /* list-style-position: inside; */
+    /* text-indent: -20px; */
+    /* list-style: none; */
+    /* padding: 0; */
+    /* margin: 0; */
   }
   ol {
     margin: 0;

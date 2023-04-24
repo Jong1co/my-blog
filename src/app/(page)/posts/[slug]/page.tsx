@@ -9,7 +9,7 @@ type CategoryPageProps = {
 };
 
 const CategoryPage = async ({ params: { slug } }: CategoryPageProps) => {
-  const posts = await getPosts(slug);
+  const posts = await getPosts(decodeURIComponent(slug));
 
   return (
     <>
