@@ -1,9 +1,8 @@
-import { getPosts } from '@/service/posts';
+import { getClassifiedPosts } from '@/service/posts';
 import PostCard from '@/_common/PostCard';
-import Link from 'next/link';
 
 const PostPage = async () => {
-  const posts = await getPosts();
+  const posts = await getClassifiedPosts();
 
   return (
     <>

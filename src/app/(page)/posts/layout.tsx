@@ -1,8 +1,8 @@
-import { getPosts } from '@/service/posts';
+import { getClassifiedPosts } from '@/service/posts';
 import { PostTitle } from './components/PostTitle';
 
 export default async function PostsLayout({ children }: { children: React.ReactNode }) {
-  const posts = await getPosts();
+  const posts = await getClassifiedPosts();
 
   const categoryWithNumber: { [key: string]: number } = posts.reduce((accr, curr) => {
     let temp: { [key: string]: string } = { ...accr };

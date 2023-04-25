@@ -1,10 +1,10 @@
-import { getPosts } from '@/service/posts';
+import { getClassifiedPosts } from '@/service/posts';
 import PostCard from '@/_common/PostCard';
 import Link from 'next/link';
 import { MdArrowForwardIos } from 'react-icons/md';
 
 export const RecentPosts = async () => {
-  const posts = await getPosts();
+  const posts = await getClassifiedPosts();
 
   return (
     <div className="bg-neutral-20">

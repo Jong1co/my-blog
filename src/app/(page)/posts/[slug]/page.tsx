@@ -1,4 +1,4 @@
-import { getPosts } from '@/service/posts';
+import { getClassifiedPosts } from '@/service/posts';
 import PostCard from '@/_common/PostCard';
 import React from 'react';
 
@@ -9,7 +9,7 @@ type CategoryPageProps = {
 };
 
 const CategoryPage = async ({ params: { slug } }: CategoryPageProps) => {
-  const posts = await getPosts(decodeURIComponent(slug));
+  const posts = await getClassifiedPosts(decodeURIComponent(slug));
 
   return (
     <>
