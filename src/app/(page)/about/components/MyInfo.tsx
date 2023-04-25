@@ -1,5 +1,5 @@
 'use client';
-import { Portal } from '@/_common/Portal';
+import { Portal } from '@/_common/components/Portal';
 import React, { useState } from 'react';
 import { ContactModal } from './ContactModal';
 import { Hero } from './Hero';

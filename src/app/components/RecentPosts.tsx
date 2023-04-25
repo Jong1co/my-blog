@@ -1,5 +1,5 @@
 import { getClassifiedPosts } from '@/service/posts';
-import PostCard from '@/_common/PostCard';
+import PostCard from '@/_common/components/PostCard';
 import Link from 'next/link';
 import { MdArrowForwardIos } from 'react-icons/md';
 

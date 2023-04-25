@@ -1,6 +1,6 @@
 'use client';
 import { replaceFirstCharToUpperCase } from '@/utils/replaceFirstCharToUpperCase';
-import { Tag } from '@/_common/Tag';
+import { Tag } from '@/_common/components/Tag';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';

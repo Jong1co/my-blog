@@ -1,5 +1,5 @@
 import { getClassifiedPosts } from '@/service/posts';
-import PostCard from '@/_common/PostCard';
+import PostCard from '@/_common/components/PostCard';
 import React from 'react';
 
 type CategoryPageProps = {

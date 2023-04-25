@@ -31,6 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/mdx", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:13.3.1"],\
             ["@tailwindcss/typography", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:0.5.9"],\
             ["@types/node", "npm:18.15.11"],\
+            ["@types/nodemailer", "npm:6.4.7"],\
             ["@types/react", "npm:18.0.37"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@types/react-syntax-highlighter", "npm:15.5.6"],\
@@ -43,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:18.2.0"],\
             ["react-icons", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:4.8.0"],\
+            ["react-lottie-player", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:1.5.4"],\
             ["react-markdown", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:8.0.7"],\
             ["react-syntax-highlighter", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:15.5.0"],\
             ["remark-gfm", "npm:3.0.1"],\
@@ -520,6 +522,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-18.15.11-fd8ceaaffd-977b4ad047.zip/node_modules/@types/node/",\
           "packageDependencies": [\
             ["@types/node", "npm:18.15.11"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.16.0", {\
+          "packageLocation": "./.yarn/cache/@types-node-npm-18.16.0-ba113a4325-63e0042136.zip/node_modules/@types/node/",\
+          "packageDependencies": [\
+            ["@types/node", "npm:18.16.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/nodemailer", [\
+        ["npm:6.4.7", {\
+          "packageLocation": "./.yarn/cache/@types-nodemailer-npm-6.4.7-8618621ba9-dc2a33a891.zip/node_modules/@types/nodemailer/",\
+          "packageDependencies": [\
+            ["@types/nodemailer", "npm:6.4.7"],\
+            ["@types/node", "npm:18.16.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3348,6 +3367,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["lottie-web", [\
+        ["npm:5.11.0", {\
+          "packageLocation": "./.yarn/cache/lottie-web-npm-5.11.0-af87b6d8ab-4f9c86c7cf.zip/node_modules/lottie-web/",\
+          "packageDependencies": [\
+            ["lottie-web", "npm:5.11.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["lowlight", [\
         ["npm:1.20.0", {\
           "packageLocation": "./.yarn/cache/lowlight-npm-1.20.0-771a13490e-14a1815d6b.zip/node_modules/lowlight/",\
@@ -4120,6 +4148,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@next/mdx", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:13.3.1"],\
             ["@tailwindcss/typography", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:0.5.9"],\
             ["@types/node", "npm:18.15.11"],\
+            ["@types/nodemailer", "npm:6.4.7"],\
             ["@types/react", "npm:18.0.37"],\
             ["@types/react-dom", "npm:18.0.11"],\
             ["@types/react-syntax-highlighter", "npm:15.5.6"],\
@@ -4132,6 +4161,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:18.2.0"],\
             ["react-icons", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:4.8.0"],\
+            ["react-lottie-player", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:1.5.4"],\
             ["react-markdown", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:8.0.7"],\
             ["react-syntax-highlighter", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:15.5.0"],\
             ["remark-gfm", "npm:3.0.1"],\
@@ -4941,6 +4971,31 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-lottie-player", [\
+        ["npm:1.5.4", {\
+          "packageLocation": "./.yarn/cache/react-lottie-player-npm-1.5.4-e0d3d5d3d6-ef2f505ca8.zip/node_modules/react-lottie-player/",\
+          "packageDependencies": [\
+            ["react-lottie-player", "npm:1.5.4"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:1.5.4", {\
+          "packageLocation": "./.yarn/__virtual__/react-lottie-player-virtual-284b7f4fb6/0/cache/react-lottie-player-npm-1.5.4-e0d3d5d3d6-ef2f505ca8.zip/node_modules/react-lottie-player/",\
+          "packageDependencies": [\
+            ["react-lottie-player", "virtual:fe990f3f5938f8183a6444d64fbb0d6dfcbb403deba81605d5db3eb55749212b46041bd0c1ccf3c0cbe3fbbfe29d09c0664bc9f1d331895440109bd77576bb3e#npm:1.5.4"],\
+            ["@types/react", "npm:18.0.37"],\
+            ["fast-deep-equal", "npm:3.1.3"],\
+            ["lottie-web", "npm:5.11.0"],\
+            ["react", "npm:18.2.0"],\
+            ["rfdc", "npm:1.3.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-markdown", [\
         ["npm:8.0.7", {\
           "packageLocation": "./.yarn/cache/react-markdown-npm-8.0.7-978c454c1c-0f3e570975.zip/node_modules/react-markdown/",\
@@ -5153,6 +5208,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/reusify-npm-1.0.4-95ac4aec11-c3076ebcc2.zip/node_modules/reusify/",\
           "packageDependencies": [\
             ["reusify", "npm:1.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["rfdc", [\
+        ["npm:1.3.0", {\
+          "packageLocation": "./.yarn/cache/rfdc-npm-1.3.0-272f288ad8-fb2ba8512e.zip/node_modules/rfdc/",\
+          "packageDependencies": [\
+            ["rfdc", "npm:1.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\

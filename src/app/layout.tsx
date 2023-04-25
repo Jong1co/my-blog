@@ -1,6 +1,6 @@
-import { Header } from '@/_common/Header';
+import { Header } from '@/_common/components/Header';
 import './globals.css';
-import { Footer } from '@/_common/Footer';
+import { Footer } from '@/_common/components/Footer';
 
 export const metadata = {
   title: 'Jongco blog',

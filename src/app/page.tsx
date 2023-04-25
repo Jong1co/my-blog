@@ -1,4 +1,4 @@
-import { Banner } from '@/_common/Banner';
+import { Banner } from '@/_common/components/Banner';
 import { RecentPosts } from './components/RecentPosts';
 
 export default function Home() {

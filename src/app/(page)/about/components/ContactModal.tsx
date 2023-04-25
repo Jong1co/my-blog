@@ -1,18 +1,49 @@
-import React from 'react';
+import { sendContactEmail } from '@/service/contact';
+import { EmailData } from '@/service/email';
+import { Loading } from '@/_common/components/Loading';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 type ContactModalProps = {
   handleModal: () => void;
 };
 
 export const ContactModal = ({ handleModal }: ContactModalProps) => {
+  const [form, setForm] = useState<EmailData>({ from: '', subject: '', message: '' });
+
+  const [loading, setLoading] = useState(false);
+
+  const onChangeForm = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, type: keyof EmailData) => {
+    setForm((prev) => ({ ...prev, [type]: e.target.value }));
+  };
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await setLoading(true);
+    await sendContactEmail(form)
+      .then(() => {
+        console.log('성공적.');
+        handleModal();
+      })
+      .catch(() => {
+        console.log('실패적.');
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <div className="absolute flex items-center justify-center w-full h-full">
       <div className="absolute z-20 w-full h-full cursor-pointer bg-black/30 backdrop-blur-sm" onClick={handleModal} />
-      <form className="absolute z-30 flex flex-col w-11/12 max-w-xl gap-3 p-6 mx-6 align-middle rounded-lg bg-neutral-50 ">
+      <form
+        className="absolute z-30 flex flex-col w-11/12 max-w-xl gap-3 p-6 mx-6 align-middle rounded-lg bg-neutral-50 "
+        onSubmit={onSubmit}
+      >
         <div className="w-full mb-2 text-center ft-header-02">Contact Me</div>
         <div>
           <div className="mb-2 align-middle ft-title-01">Your Email</div>
           <input
+            onChange={(e) => onChangeForm(e, 'from')}
             placeholder="이메일을 입력해주세요."
             type="email"
             required
@@ -22,6 +53,7 @@ export const ContactModal = ({ handleModal }: ContactModalProps) => {
         <div>
           <div className="mb-2 align-middle ft-title-01">Subject</div>
           <input
+            onChange={(e) => onChangeForm(e, 'subject')}
             type="text"
             required
             className="w-full px-3 py-3 text-black rounded-md bg-neutral-100 ft-body-01"
@@ -31,13 +63,17 @@ export const ContactModal = ({ handleModal }: ContactModalProps) => {
         <div>
           <div className="mb-2 align-middle ft-title-01">Message</div>
           <textarea
+            onChange={(e) => onChangeForm(e, 'message')}
             required
             className="w-full h-32 px-3 py-3 text-black border-none rounded-md resize-none bg-neutral-100 ft-body-01 focus:outline-0 focus:ring-0"
             placeholder="내용을 입력해주세요."
           />
         </div>
-        <button className="w-full py-4 mt-5 duration-150 ease-in-out rounded-lg bg-primary-50 text-neutral-50 ft-title-01 hover:brightness-75">
-          Submit
+        <button className="relative w-full py-4 mt-5 duration-150 ease-in-out rounded-lg bg-primary-50 text-neutral-50 ft-title-01 hover:brightness-75">
+          {/* <span>
+            <Loading />
+          </span> */}
+          <span>Submit</span>
         </button>
       </form>
     </div>
