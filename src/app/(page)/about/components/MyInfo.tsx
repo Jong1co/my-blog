@@ -3,6 +3,8 @@ import { Portal } from '@/_common/components/Portal';
 import React, { useState } from 'react';
 import { ContactModal } from './ContactModal';
 import { Hero } from './Hero';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const MyInfo = () => {
   const INFO = [
@@ -15,6 +17,9 @@ export const MyInfo = () => {
       link: 'https://jonco.com',
     },
   ];
+
+  const successToast = () => toast.success('메일이 성공적으로 전송되었습니다.');
+  const errorToast = () => toast.error('메일 전송에 실패했습니다.');
 
   const [showContactModal, setShowContactModal] = useState(false);
 
@@ -49,9 +54,10 @@ export const MyInfo = () => {
       </div>
       {showContactModal && (
         <Portal selector="#portal">
-          <ContactModal handleModal={handleContactModal} />
+          <ContactModal handleModal={handleContactModal} success={successToast} error={errorToast} />
         </Portal>
       )}
+      <ToastContainer className="" position="top-right" theme="dark" pauseOnFocusLoss draggable pauseOnHover />
     </>
   );
 };

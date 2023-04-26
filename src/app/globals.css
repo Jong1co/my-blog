@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --toastify-color-dark: #3b3b44;
+    --toastify-color-success: #66ffa6;
+  }
   html {
     font-size: 16px;
   }

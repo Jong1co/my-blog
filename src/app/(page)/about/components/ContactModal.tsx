@@ -1,13 +1,14 @@
 import { sendContactEmail } from '@/service/contact';
 import { EmailData } from '@/service/email';
-import { Loading } from '@/_common/components/Loading';
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 
 type ContactModalProps = {
   handleModal: () => void;
+  success: () => void;
+  error: () => void;
 };
 
-export const ContactModal = ({ handleModal }: ContactModalProps) => {
+export const ContactModal = ({ handleModal, success, error }: ContactModalProps) => {
   const [form, setForm] = useState<EmailData>({ from: '', subject: '', message: '' });
 
   const [loading, setLoading] = useState(false);
@@ -21,12 +22,10 @@ export const ContactModal = ({ handleModal }: ContactModalProps) => {
     await setLoading(true);
     await sendContactEmail(form)
       .then(() => {
-        console.log('성공적.');
         handleModal();
+        success();
       })
-      .catch(() => {
-        console.log('실패적.');
-      })
+      .catch(error)
       .finally(() => {
         setLoading(false);
       });
@@ -69,11 +68,13 @@ export const ContactModal = ({ handleModal }: ContactModalProps) => {
             placeholder="내용을 입력해주세요."
           />
         </div>
-        <button className="relative w-full py-4 mt-5 duration-150 ease-in-out rounded-lg bg-primary-50 text-neutral-50 ft-title-01 hover:brightness-75">
-          {/* <span>
-            <Loading />
-          </span> */}
-          <span>Submit</span>
+        <button
+          disabled={loading}
+          className={`relative w-full py-4 mt-5 duration-150 ease-in-out rounded-lg ${
+            loading ? 'bg-neutral-70' : 'bg-primary-50'
+          }  text-neutral-50 ft-title-01 ${!loading && 'hover:brightness-75'}`}
+        >
+          Submit
         </button>
       </form>
     </div>
