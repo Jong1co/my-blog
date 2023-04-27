@@ -24,3 +24,9 @@ export const getClassifiedPosts = async (query: string = '') => {
     return posts.filter((post) => post.category.map((tag) => tag.toLowerCase()).includes(query));
   });
 };
+
+export const getPostTitle = async (path: string): Promise<Partial<PostCardInfo>> => {
+  return getAllPosts()
+    .then((posts) => posts.find((post) => post.path === path))
+    .then((post) => ({ title: post?.title }));
+};
