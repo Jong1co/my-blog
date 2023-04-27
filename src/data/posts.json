@@ -1,5 +1,14 @@
 [
   {
+    "title": "[프로그래머스] 튜플 (feat.javascript)",
+    "description": "카카오 튜플 문제를 풀면서 만났던 성능상 이슈로 통과하지 못한 풀이와, 해결한 풀이를 살펴보도록 하겠습니다.",
+    "date": "2023-04-26",
+    "category": ["Programmers", "Algorithm"],
+    "path": "programmers-tuple",
+    "featured": true,
+    "thumbnail": null
+  },
+  {
     "title": "2021년 리뷰",
     "description": "2021년 한해 동안 배운 기술들, 생각들 정리",
     "date": "2021-12-31",
