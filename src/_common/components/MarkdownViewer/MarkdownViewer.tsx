@@ -15,12 +15,15 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
       components={{
         code({ node, inline, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '');
+
           return !inline && match ? (
             <SyntaxHighlighter language={match[1]} PreTag="div" {...props} style={xonokai}>
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
           ) : (
-            <code {...props}>{children}</code>
+            <code {...props} className="p-1 mr-1 rounded-md bg-neutral-50 text-neutral-100 ">
+              {children}
+            </code>
           );
         },
         img: (image) => <Image src={image.src || ''} alt={image.alt || ''} width={500} height={300} />,
@@ -33,6 +36,7 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
           </a>
         ),
         strong: (props) => <a className="no-underline text-neutral-100">{props.children}</a>,
+        pre: (props) => <pre className="no-underline text-neutral-100">{props.children}</pre>,
       }}
     >
       {content}
