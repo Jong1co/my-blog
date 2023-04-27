@@ -2,7 +2,6 @@ import { getContent } from '@/service/content';
 import React from 'react';
 import { MarkdownViewer } from '@/_common/components/MarkdownViewer/MarkdownViewer';
 import { getPostTitle } from '@/service/posts';
-import TOC from '../components/TOC';
 
 type ContentPageProps = {
   params: {
@@ -16,8 +15,7 @@ const ContentPage = async ({ params: { slug } }: ContentPageProps) => {
 
   return (
     <>
-      <TOC />
-      <div className="px-4">
+      <div className="px-8">
         <h1 className="my-10 ft-header-01">{post.title}</h1>
         <MarkdownViewer content={content} />
       </div>
