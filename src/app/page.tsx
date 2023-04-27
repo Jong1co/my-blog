@@ -4,7 +4,7 @@ import { RecentPosts } from './components/RecentPosts';
 export default function Home() {
   return (
     <section className="flex flex-col">
-      <Banner />
+      {/* <Banner /> */}
       {/* @ts-expect-error Server Component */}
       <RecentPosts />
     </section>

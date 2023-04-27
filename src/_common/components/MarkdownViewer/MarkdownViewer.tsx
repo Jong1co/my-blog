@@ -34,12 +34,15 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
               </code>
             );
           },
-          img: (image) => <Image src={image.src || ''} alt={image.alt || ''} width={500} height={300} />,
+          img: (props) => <Image src={props.src || ''} alt={props.alt || ''} width={500} height={300} />,
           h1: (props) => <h1 className="text-neutral-100 ft-header-01">{props.children}</h1>,
           h2: (props) => <HeaderObserver toc={toc}>{props.children}</HeaderObserver>,
           b: (props) => <b className="text-neutral-100">{props.children}</b>,
           a: (props) => (
-            <a className="no-underline duration-75 ease-in-out cursor-pointer text-neutral-50 hover:underline hover:text-neutral-70">
+            <a
+              href={props.href}
+              className="no-underline duration-75 ease-in-out cursor-pointer text-neutral-50 hover:underline hover:text-neutral-70"
+            >
               {props.children}
             </a>
           ),
