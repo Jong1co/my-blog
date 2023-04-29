@@ -1,22 +1,19 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow, twilight, atomDark, cb, xonokai, materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Image from 'next/image';
-import { HeaderObserver } from './HeaderObserver';
 import { TOC } from '@/app/(page)/content/components/TOC';
 
-export type TOCElement = { title: string; scrollTop: number };
+export type TOCElement = { title: string; scrollTop: number; indent: number };
 
 export const MarkdownViewer = ({ content }: { content: string }) => {
-  const toc = useRef<TOCElement[]>([]);
-
   return (
     <div className="relative">
-      {/* <TOC tocList={toc.current} /> */}
+      <TOC content={content} />
       <ReactMarkdown
         className="max-w-3xl prose"
         remarkPlugins={[remarkGfm]}
@@ -36,7 +33,8 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
           },
           img: (props) => <Image src={props.src || ''} alt={props.alt || ''} width={500} height={300} />,
           h1: (props) => <h1 className="text-neutral-100 ft-header-01">{props.children}</h1>,
-          h2: (props) => <HeaderObserver toc={toc}>{props.children}</HeaderObserver>,
+          h2: (props) => <h2 className="text-neutral-100 ft-header-02">{props.children}</h2>,
+          h3: (props) => <h3 className="text-neutral-100 ft-header-03">{props.children}</h3>,
           b: (props) => <b className="text-neutral-100">{props.children}</b>,
           a: (props) => (
             <a

@@ -1,44 +1,38 @@
 'use client';
+
+import { useIntersectionObserver } from '@/hook/useIntersectionObserver';
 import { TOCElement } from '@/_common/components/MarkdownViewer/MarkdownViewer';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
-export const TOC = ({ tocList }: { tocList: TOCElement[] }) => {
-  const [tocInfoList, setTocInfoList] = useState<TOCElement[]>([]);
-  const [selected, setSelected] = useState('');
-  const [refresh, setRefresh] = useState(false);
+export const TOC = ({ content }: { content: string }) => {
+  const [active, setActive] = useState('');
 
-  useEffect(() => {
-    setRefresh((prev) => !prev);
-  }, []);
-
-  useEffect(() => {
-    setTocInfoList((prev) => [...tocList]);
-  }, [refresh]);
+  const [tocInfoList] = useIntersectionObserver(setActive, content);
 
   const scrollToTitle = ({ scrollTop, title }: TOCElement) => {
     window.scrollTo({ top: scrollTop });
-    setSelected(title);
+    setActive(title);
   };
 
   if (tocInfoList.length === 0) return null;
 
   return (
     <div className="sticky right-0 float-right w-1 px-0 top-20 text-neutral-50">
-      <div className="flex flex-col w-12 gap-3 py-4 border-r-4 border-primary-60">
+      <ul className="flex flex-col w-12 gap-3 py-4 border-r-2 border-primary-60">
         {tocInfoList.map((toc) => {
           return (
-            <div
-              className={`duration-100 ft-title-02 w-52 ease-in-out cursor-pointer md-8 ml-16 hover:text-primary-50 ${
-                toc.title === selected ? 'text-primary-50' : 'ml-20'
+            <li
+              className={`duration-100 w-52 ease-in-out cursor-pointer md-8 ml-${12 + toc.indent * 4} hover:text-primary-60 ${
+                toc.title === active ? 'text-primary-60 ft-title-02' : 'ft-body-01'
               }`}
               key={toc.title}
               onClick={() => scrollToTitle(toc)}
             >
               {toc.title}
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   );
 };

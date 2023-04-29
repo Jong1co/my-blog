@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <header className="flex flex-row items-center justify-between px-4 py-6 bg-neutral-20 ft-logo-01">
       <Link href="/">
-        <h1 className="ft-logo-01">Jongco</h1>
+        <span className="ft-logo-01">Jongco</span>
       </Link>
       <nav className="flex flex-row gap-4 ft-title-02">
         <Link href="/" className={`${pathname === '/' ? '' : 'text-neutral-50'} hover:text-neutral-100 ease-in-out duration-150`}>

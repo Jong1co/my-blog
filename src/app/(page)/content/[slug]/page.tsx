@@ -16,7 +16,7 @@ const ContentPage = async ({ params: { slug } }: ContentPageProps) => {
   return (
     <>
       <div className="px-8">
-        <h1 className="my-10 ft-header-01">{post.title}</h1>
+        <div className="my-10 ft-header-01">{post.title}</div>
         <MarkdownViewer content={content} />
       </div>
     </>
