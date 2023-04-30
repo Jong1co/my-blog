@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
-import profileImage from '../../../../../public/images/profile.png';
+import profileImage from '../../../public/images/profile.png';
 
 type HeroProps = {
   handleModal: () => void;

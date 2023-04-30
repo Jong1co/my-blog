@@ -1,5 +1,5 @@
 import React from 'react';
-import { Property } from '../../app/(page)/about/components/Property';
+import { Property } from './Property';
 
 export const Experience = () => {
   return (

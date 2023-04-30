@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react';
-import { Experience } from '../../../_common/components/Experience';
-import { MyInfo } from './components/MyInfo';
+import { Experience } from '@/_common/components/Experience';
+import { MyInfo } from '@/_common/components/MyInfo';
 
 export const metadata: Metadata = {
   title: 'About Me',
