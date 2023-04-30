@@ -1,8 +1,9 @@
 import path from 'path';
 import { promises as fs } from 'fs';
 import { PostCardInfo } from '@/types/post';
+import { cache } from 'react';
 
-export const getAllPosts = async (query: string = ''): Promise<PostCardInfo[]> => {
+export const getAllPosts = cache(async (query: string = ''): Promise<PostCardInfo[]> => {
   const filepath = path.join(process.cwd(), 'src', 'data', 'posts.json');
   const posts = await fs
     .readFile(filepath, 'utf-8')
@@ -11,7 +12,7 @@ export const getAllPosts = async (query: string = ''): Promise<PostCardInfo[]> =
     .then((posts) => posts.sort((a, b) => (a.date > b.date ? -1 : 1)));
 
   return posts;
-};
+});
 
 export const getFeaturedPosts = async () => {
   return getAllPosts().then((posts) => posts.filter((post) => post.featured));
@@ -28,5 +29,5 @@ export const getClassifiedPosts = async (query: string = '') => {
 export const getPostTitle = async (path: string): Promise<Partial<PostCardInfo>> => {
   return getAllPosts()
     .then((posts) => posts.find((post) => post.path === path))
-    .then((post) => ({ title: post?.title }));
+    .then((post) => ({ title: post?.title, description: post?.description }));
 };

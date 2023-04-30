@@ -2,7 +2,7 @@ import { PostCardInfo } from '@/types/post';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { Tag } from '../Tag';
+import { Tag } from './Tag';
 
 const PostCard = ({ title, description, date, category, path, featured, thumbnail }: PostCardInfo) => {
   return (

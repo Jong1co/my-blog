@@ -3,8 +3,14 @@ import './globals.css';
 import { Footer } from '@/_common/components/Footer';
 
 export const metadata = {
-  title: 'Jongco blog',
-  description: '',
+  title: {
+    default: 'Jonghyun',
+    template: 'Jonghyun | %s',
+  },
+  description: '프론트엔드 개발자의 기록용 블로그',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

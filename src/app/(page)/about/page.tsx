@@ -1,6 +1,12 @@
+import { Metadata } from 'next';
 import React from 'react';
-import { Experience } from './components/Experience';
+import { Experience } from '../../../_common/components/Experience';
 import { MyInfo } from './components/MyInfo';
+
+export const metadata: Metadata = {
+  title: 'About Me',
+  description: '소개 페이지',
+};
 
 const AboutPage = () => {
   return (

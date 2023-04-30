@@ -1,4 +1,5 @@
 'use client';
+
 import { replaceFirstCharToUpperCase } from '@/utils/replaceFirstCharToUpperCase';
 import { Tag } from '@/_common/components/Tag';
 import Link from 'next/link';

@@ -1,5 +1,4 @@
 'use client';
-import { Portal } from '@/_common/components/Portal';
 import React, { useState } from 'react';
 import { ContactModal } from './ContactModal';
 import { Hero } from './Hero';
@@ -52,11 +51,7 @@ export const MyInfo = () => {
           })}
         </div>
       </div>
-      {showContactModal && (
-        <Portal selector="#portal">
-          <ContactModal handleModal={handleContactModal} success={successToast} error={errorToast} />
-        </Portal>
-      )}
+      {showContactModal && <ContactModal handleModal={handleContactModal} success={successToast} error={errorToast} />}
       <ToastContainer className="" position="top-right" theme="dark" pauseOnFocusLoss draggable pauseOnHover />
     </>
   );

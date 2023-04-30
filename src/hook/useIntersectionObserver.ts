@@ -1,4 +1,4 @@
-import { TOCElement } from '@/_common/components/MarkdownViewer/MarkdownViewer';
+import { TOCElement } from '@/_common/components/MarkdownViewer';
 import React, { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 
 export const useIntersectionObserver = (setActive: Dispatch<SetStateAction<string>>, content: string) => {

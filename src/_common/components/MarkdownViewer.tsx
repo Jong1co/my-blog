@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow, twilight, atomDark, cb, xonokai, materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import Image from 'next/image';
-import { TOC } from '@/app/(page)/content/components/TOC';
+import { TOC } from '@/_common/components/TOC';
 
 export type TOCElement = { title: string; scrollTop: number; indent: number };
 
