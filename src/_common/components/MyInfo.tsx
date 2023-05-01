@@ -13,7 +13,7 @@ export const MyInfo = () => {
     },
     {
       title: 'Blog',
-      link: 'https://jonco.com',
+      link: 'https://my-blog-jong1co.vercel.app/',
     },
   ];
 
