@@ -28,11 +28,14 @@ export const MyInfo = () => {
 
   return (
     <>
-      <div className="flex items-center gap-8 mt-4">
+      <div className="flex mt-4 gap-y-8 mobile:gap-8 mobile:items-center">
         <Hero handleModal={handleContactModal} />
         <div className="flex flex-col gap-3 ft-header-02">
-          <h3 className="mb-3">____ 박종현입니다</h3>
-          <div className="mb-3 ft-body-02">날 한 줄로 표현할 수 있는 문장이 무엇이 있을까</div>
+          <h3 className="mb-3">____박종현입니다</h3>
+          <div className="mb-3 ft-body-02">
+            <div className="mb-2">호기심이 많고, 매사에 긍정적 입니다.</div>
+            <div>문제를 더 나은 방향으로 해결하고자 노력합니다.</div>
+          </div>
           <div className="align-middle ft-title-02">
             E-mail :{' '}
             <span onClick={handleContactModal} className="cursor-pointer ft-body-02 hover:underline">
