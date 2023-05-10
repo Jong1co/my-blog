@@ -21,9 +21,18 @@
     "title": "[프로그래머스] Level2 소수 찾기 (feat.javascript)",
     "description": "주어진 문자열로 숫자를 생성하고, 해당 숫자가 소수인지 아닌지 판별하는 알고리즘 문제 ",
     "date": "2023-04-27",
-    "category": ["프로그래머스", "알고리듬", "C+++"],
+    "category": ["Programmers", "Algorithm"],
     "path": "programmers-find-prime",
     "featured": true,
+    "thumbnail": null
+  },
+  {
+    "title": "[blog] Next에서 목차(TOC) 만들기",
+    "description": "Nextjs를 사용해 목차를 만드는 과정",
+    "date": "2023-04-10",
+    "category": ["NextJS", "TOC"],
+    "path": "next-toc",
+    "featured": false,
     "thumbnail": null
   }
 ]

@@ -5318,7 +5318,7 @@ __metadata:
     yup: ^1.1.1
   dependenciesMeta:
     next@13.3.0:
-      unplugged: true
+      unplugged: false
   languageName: unknown
   linkType: soft
 
