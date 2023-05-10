@@ -21,7 +21,7 @@
     "title": "[프로그래머스] Level2 소수 찾기 (feat.javascript)",
     "description": "주어진 문자열로 숫자를 생성하고, 해당 숫자가 소수인지 아닌지 판별하는 알고리즘 문제 ",
     "date": "2023-04-27",
-    "category": ["Programmers", "Algorithm"],
+    "category": ["프로그래머스", "알고리듬", "C+++"],
     "path": "programmers-find-prime",
     "featured": true,
     "thumbnail": null

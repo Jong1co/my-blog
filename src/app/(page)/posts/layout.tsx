@@ -1,6 +1,7 @@
 import { getClassifiedPosts } from '@/service/posts';
 import { Metadata } from 'next';
 import { PostTitle } from '@/_common/components/PostTitle';
+import { classifyPostsByCategory } from '@/utils/classifyPostsByCategory';
 
 export const metadata: Metadata = {
   title: 'Posts',
@@ -9,19 +10,11 @@ export const metadata: Metadata = {
 
 export default async function PostsLayout({ children }: { children: React.ReactNode }) {
   const posts = await getClassifiedPosts();
-
-  const categoryWithNumber: { [key: string]: number } = posts.reduce((accr, curr) => {
-    let temp: { [key: string]: string } = { ...accr };
-
-    curr.category.forEach((tag) => {
-      temp = { ...temp, [tag.toLowerCase()]: (temp[tag.toLowerCase()] ?? 0) + 1 };
-    });
-    return { ...temp };
-  }, {});
+  const countByCategory = classifyPostsByCategory(posts);
 
   return (
     <section>
-      <PostTitle categoryWithNumber={categoryWithNumber} />
+      <PostTitle countByCategory={countByCategory} />
       <div>
         <ul className="flex flex-col gap-4 px-4 py-2 bg-neutral-20 ">{children}</ul>
       </div>

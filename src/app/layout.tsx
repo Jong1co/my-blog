@@ -1,6 +1,6 @@
 import { Header } from '@/_common/components/Header';
-import './globals.css';
 import { Footer } from '@/_common/components/Footer';
+import './globals.css';
 
 export const metadata = {
   title: {

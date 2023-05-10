@@ -22,7 +22,7 @@ export const getClassifiedPosts = async (query: string = '') => {
   return getFeaturedPosts().then<PostCardInfo[]>((posts) => {
     if (query === '') return posts;
 
-    return posts.filter((post) => post.category.map((tag) => tag.toLowerCase()).includes(query));
+    return posts.filter((post) => post.category.includes(query));
   });
 };
 
