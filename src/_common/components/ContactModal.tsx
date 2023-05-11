@@ -34,7 +34,7 @@ export const ContactModal = ({ handleModal, success, error }: ContactModalProps)
 
   return (
     <Portal selector="#portal">
-      <div className="absolute flex items-center justify-center w-full h-full">
+      <div className="fixed z-40 flex items-center justify-center w-full h-full">
         <div className="absolute z-20 w-full h-full cursor-pointer bg-black/30 backdrop-blur-sm" onClick={handleModal} />
         <form
           className="absolute z-30 flex flex-col w-11/12 max-w-xl gap-3 p-6 mx-6 align-middle rounded-lg bg-neutral-50 "
