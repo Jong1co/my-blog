@@ -31,3 +31,17 @@ export const getPostTitle = async (path: string): Promise<Partial<PostCardInfo>>
     .then((posts) => posts.find((post) => post.path === path))
     .then((post) => ({ title: post?.title, description: post?.description }));
 };
+
+type NearbyPosts = {
+  nextPost: PostCardInfo | null;
+  prevPost: PostCardInfo | null;
+};
+
+export const getNearbyPosts = async (path: string): Promise<NearbyPosts> => {
+  return getFeaturedPosts().then((posts) => {
+    const currentIndex = posts.findIndex((post) => post.path === path);
+
+    const nearbyPosts: NearbyPosts = { nextPost: posts[currentIndex - 1] || null, prevPost: posts[currentIndex + 1] || null };
+    return nearbyPosts;
+  });
+};

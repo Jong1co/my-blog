@@ -29,10 +29,10 @@
   {
     "title": "[blog] Next에서 목차(TOC) 만들기",
     "description": "Nextjs를 사용해 목차를 만드는 과정",
-    "date": "2023-04-10",
+    "date": "2023-05-10",
     "category": ["NextJS", "TOC"],
     "path": "next-toc",
-    "featured": false,
+    "featured": true,
     "thumbnail": null
   }
 ]

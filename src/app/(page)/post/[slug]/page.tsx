@@ -1,8 +1,10 @@
 import { getContent } from '@/service/content';
 import React from 'react';
 import { MarkdownViewer } from '@/_common/components/MarkdownViewer';
-import { getClassifiedPosts, getPostTitle } from '@/service/posts';
+import { getClassifiedPosts, getNearbyPosts, getPostTitle } from '@/service/posts';
 import { Metadata } from 'next';
+import NextPostButton from '@/_common/components/PassPostButtons/NextPostButton';
+import PrevPostButton from '@/_common/components/PassPostButtons/PrevPostButton';
 
 type ContentPageProps = {
   params: {
@@ -26,14 +28,17 @@ export async function generateStaticParams() {
 const ContentPage = async ({ params: { slug } }: ContentPageProps) => {
   const content = await getContent(slug);
   const post = await getPostTitle(slug);
+  const { prevPost, nextPost } = await getNearbyPosts(slug);
 
   return (
-    <>
-      <div className="px-8">
-        <div className="my-10 ft-header-01">{post.title}</div>
-        <MarkdownViewer content={content} />
+    <div className="px-8">
+      <div className="my-10 ft-header-01">{post.title}</div>
+      <MarkdownViewer content={content} />
+      <div className="flex justify-between w-full gap-4 mt-20">
+        {prevPost ? <PrevPostButton title={prevPost?.title} path={prevPost?.path} /> : <div className="w-3 h-3" />}
+        {nextPost ? <NextPostButton title={nextPost?.title} path={nextPost?.path} /> : <div className="w-3 h-3" />}
       </div>
-    </>
+    </div>
   );
 };
 
