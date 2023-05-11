@@ -8,7 +8,6 @@ export const getAllPosts = cache(async (query: string = ''): Promise<PostCardInf
   const posts = await fs
     .readFile(filepath, 'utf-8')
     .then<PostCardInfo[]>(JSON.parse)
-    .then((posts) => posts.map((post) => ({ ...post, thumbnail: `/images/posts/${post.path}.png` })))
     .then((posts) => posts.sort((a, b) => (a.date > b.date ? -1 : 1)));
 
   return posts;

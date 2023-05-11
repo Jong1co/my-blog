@@ -15,7 +15,7 @@
     "category": ["Programmers", "Algorithm"],
     "path": "programmers-tuple",
     "featured": true,
-    "thumbnail": null
+    "thumbnail": "/images/posts/programmers-tuple.png"
   },
   {
     "title": "[프로그래머스] Level2 소수 찾기 (feat.javascript)",
@@ -24,7 +24,7 @@
     "category": ["Programmers", "Algorithm"],
     "path": "programmers-find-prime",
     "featured": true,
-    "thumbnail": null
+    "thumbnail": "/images/posts/programmers-find-prime.png"
   },
   {
     "title": "[blog] Next에서 목차(TOC) 만들기",
