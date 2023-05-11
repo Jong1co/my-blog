@@ -1,22 +1,23 @@
 'use client';
+
 import React, { useState } from 'react';
 import { ContactModal } from './ContactModal';
 import { Hero } from './Hero';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const MyInfo = () => {
-  const INFO = [
-    {
-      title: 'Github',
-      link: 'https://github.com/Jong1co',
-    },
-    {
-      title: 'Blog',
-      link: 'https://my-blog-jong1co.vercel.app/',
-    },
-  ];
+const info = [
+  {
+    title: 'Github',
+    link: 'https://github.com/Jong1co',
+  },
+  {
+    title: 'Blog',
+    link: 'https://my-blog-jong1co.vercel.app/',
+  },
+];
 
+export const MyInfo = () => {
   const successToast = () => toast.success('메일이 성공적으로 전송되었습니다.');
   const errorToast = () => toast.error('메일 전송에 실패했습니다.');
 
@@ -42,7 +43,7 @@ export const MyInfo = () => {
               narira0922@gmail.com
             </span>
           </div>
-          {INFO.map(({ title, link }) => {
+          {info.map(({ title, link }) => {
             return (
               <div className="align-middle ft-title-02" key={title}>
                 {title} :{' '}

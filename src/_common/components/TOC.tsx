@@ -1,8 +1,9 @@
 'use client';
 
-import { useIntersectionObserver } from '@/hook/useIntersectionObserver';
-import { TOCElement } from '@/_common/components/MarkdownViewer';
 import React, { useState } from 'react';
+
+import { TOCElement } from '@/_common/components/MarkdownViewer';
+import { useIntersectionObserver } from '@/hook/useIntersectionObserver';
 
 export const TOC = ({ content }: { content: string }) => {
   const [active, setActive] = useState('');

@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 const AboutPage = () => {
   return (
-    <section className="flex flex-col max-w-2xl gap-8 px-4 mx-auto">
+    <>
       <MyInfo />
       <Experience />
-    </section>
+    </>
   );
 };
 

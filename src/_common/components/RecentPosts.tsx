@@ -18,7 +18,7 @@ export const RecentPosts = async () => {
         </Link>
       </div>
       <ul className="flex flex-col gap-4 px-4 py-3">
-        {posts.slice(0, 5).map((post) => {
+        {posts.slice(0, 3).map((post) => {
           return <PostCard key={post.title} {...post} />;
         })}
       </ul>

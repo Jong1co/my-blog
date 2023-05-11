@@ -8,7 +8,6 @@ export const getAllPosts = cache(async (query: string = ''): Promise<PostCardInf
   const posts = await fs
     .readFile(filepath, 'utf-8')
     .then<PostCardInfo[]>(JSON.parse)
-    .then((posts) => posts.map((post) => ({ ...post, thumbnail: `/images/posts/${post.path}.png` })))
     .then((posts) => posts.sort((a, b) => (a.date > b.date ? -1 : 1)));
 
   return posts;
@@ -18,11 +17,17 @@ export const getFeaturedPosts = async () => {
   return getAllPosts().then((posts) => posts.filter((post) => post.featured));
 };
 
+export const getAllCategories = async (query: string = '') => {
+  return getFeaturedPosts().then((posts) => {
+    return [...new Set(posts.map((post) => post.category).flat())];
+  });
+};
+
 export const getClassifiedPosts = async (query: string = '') => {
   return getFeaturedPosts().then<PostCardInfo[]>((posts) => {
     if (query === '') return posts;
 
-    return posts.filter((post) => post.category.map((tag) => tag.toLowerCase()).includes(query));
+    return posts.filter((post) => post.category.includes(query));
   });
 };
 
@@ -30,4 +35,18 @@ export const getPostTitle = async (path: string): Promise<Partial<PostCardInfo>>
   return getAllPosts()
     .then((posts) => posts.find((post) => post.path === path))
     .then((post) => ({ title: post?.title, description: post?.description }));
+};
+
+type NearbyPosts = {
+  nextPost: PostCardInfo | null;
+  prevPost: PostCardInfo | null;
+};
+
+export const getNearbyPosts = async (path: string): Promise<NearbyPosts> => {
+  return getFeaturedPosts().then((posts) => {
+    const currentIndex = posts.findIndex((post) => post.path === path);
+
+    const nearbyPosts: NearbyPosts = { nextPost: posts[currentIndex - 1] || null, prevPost: posts[currentIndex + 1] || null };
+    return nearbyPosts;
+  });
 };

@@ -1,9 +1,10 @@
 import React from 'react';
+import { MyInfo } from './MyInfo';
 
 export const Banner = () => {
   return (
-    <div className="flex items-center justify-center w-full h-48 text-6xl whitespace-pre ft-logo-01 bg-neutral-20 ">
-      {/* {'BETTER THAN YESTERDAY'} */}
-    </div>
+    <section className="flex items-center justify-start w-full max-w-2xl px-4 pb-10 mx-auto whitespace-pre ">
+      <MyInfo />
+    </section>
   );
 };
