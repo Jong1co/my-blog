@@ -17,6 +17,12 @@ export const getFeaturedPosts = async () => {
   return getAllPosts().then((posts) => posts.filter((post) => post.featured));
 };
 
+export const getAllCategories = async (query: string = '') => {
+  return getFeaturedPosts().then((posts) => {
+    return [...new Set(posts.map((post) => post.category).flat())];
+  });
+};
+
 export const getClassifiedPosts = async (query: string = '') => {
   return getFeaturedPosts().then<PostCardInfo[]>((posts) => {
     if (query === '') return posts;
