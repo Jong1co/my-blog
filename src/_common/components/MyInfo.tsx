@@ -5,6 +5,7 @@ import { ContactModal } from './ContactModal';
 import { Hero } from './Hero';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import usePreventScroll from '@/hook/usePreventScroll';
 
 const info = [
   {
@@ -22,6 +23,8 @@ export const MyInfo = () => {
   const errorToast = () => toast.error('메일 전송에 실패했습니다.');
 
   const [showContactModal, setShowContactModal] = useState(false);
+
+  usePreventScroll(showContactModal);
 
   const handleContactModal = () => {
     setShowContactModal((prev) => !prev);

@@ -5,6 +5,7 @@ import { getClassifiedPosts, getNearbyPosts, getPostTitle } from '@/service/post
 import { Metadata } from 'next';
 import NextPostButton from '@/_common/components/PassPostButtons/NextPostButton';
 import PrevPostButton from '@/_common/components/PassPostButtons/PrevPostButton';
+import Comment from '@/_common/components/Comment';
 
 type ContentPageProps = {
   params: {
@@ -34,10 +35,11 @@ const ContentPage = async ({ params: { slug } }: ContentPageProps) => {
     <div className="px-8">
       <div className="my-10 ft-header-01">{post.title}</div>
       <MarkdownViewer content={content} />
-      <div className="flex justify-between w-full gap-4 mt-20">
+      <div className="flex justify-between w-full gap-4 my-20">
         {prevPost ? <PrevPostButton title={prevPost?.title} path={prevPost?.path} /> : <div className="w-3 h-3" />}
         {nextPost ? <NextPostButton title={nextPost?.title} path={nextPost?.path} /> : <div className="w-3 h-3" />}
       </div>
+      <Comment />
     </div>
   );
 };
