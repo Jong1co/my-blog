@@ -35,7 +35,7 @@ const ContentPage = async ({ params: { slug } }: ContentPageProps) => {
     <div className="px-8">
       <div className="my-10 ft-header-01">{post.title}</div>
       <MarkdownViewer content={content} />
-      <div className="flex justify-between w-full gap-4 my-20">
+      <div className="flex flex-col justify-between w-full gap-4 my-20 post:flex-row">
         {prevPost ? <PrevPostButton title={prevPost?.title} path={prevPost?.path} /> : <div className="w-3 h-3" />}
         {nextPost ? <NextPostButton title={nextPost?.title} path={nextPost?.path} /> : <div className="w-3 h-3" />}
       </div>
