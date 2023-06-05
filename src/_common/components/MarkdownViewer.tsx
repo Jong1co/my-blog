@@ -31,9 +31,7 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
               </span>
             );
           },
-          img: (props) => (
-            <Image src={props.src || ''} alt={props.alt || ''} width={500} height={300} className="object-cover w-full max-h-60" />
-          ),
+          img: (props) => <Image src={props.src || ''} alt={props.alt || ''} width={500} height={500} className="object-cover w-full" />,
           h1: (props) => <h1 className="text-neutral-100 ft-header-01">{props.children}</h1>,
           h2: (props) => <h2 className="text-neutral-100 ft-header-02">{props.children}</h2>,
           h3: (props) => <h3 className="text-neutral-100 ft-header-03">{props.children}</h3>,

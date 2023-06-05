@@ -27,12 +27,21 @@
     "thumbnail": "/images/posts/programmers-find-prime.png"
   },
   {
+    "title": "테스트를 작성해보자 ! 좋아요 ! 근데 뭘요?(feat.jest)",
+    "description": "진짜 딱 이 기분이었다. 아무리 구글링해도 테스트를 작성하는 방법만 써있을 뿐.. 어떤 것을 테스트 해야 하는지에 대해서는 해답을 찾지 못했다.. 단위 테스트를 많이 작성하라는대, 그럼 단순히 버튼 컴포넌트도 테스트를 작성해야 하는 건가?",
+    "date": "2023-05-22",
+    "category": ["React", "Jest", "testing-library"],
+    "path": "lets-write-a-test-code",
+    "featured": true,
+    "thumbnail": "/images/posts/lets-write-a-test-code/thumbnail.png"
+  },
+  {
     "title": "[blog] Next에서 목차(TOC) 만들기",
     "description": "Nextjs를 사용해 목차를 만드는 과정",
     "date": "2023-05-10",
     "category": ["NextJS", "TOC"],
     "path": "next-toc",
-    "featured": true,
+    "featured": false,
     "thumbnail": null
   }
 ]
