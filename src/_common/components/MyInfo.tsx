@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ContactModal } from './ContactModal';
 import { Hero } from './Hero';
 import { toast, ToastContainer } from 'react-toastify';
