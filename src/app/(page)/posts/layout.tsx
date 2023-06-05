@@ -14,7 +14,7 @@ export default async function PostsLayout({ children }: { children: React.ReactN
 
   return (
     <section>
-      <PostTitle countByCategory={countByCategory} />
+      <PostTitle countByCategory={countByCategory} count={posts.length} />
       <div>
         <ul className="flex flex-col gap-4 px-4 py-2 bg-neutral-20 ">{children}</ul>
       </div>

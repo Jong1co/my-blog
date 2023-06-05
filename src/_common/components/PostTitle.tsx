@@ -7,14 +7,15 @@ import { usePathname } from 'next/navigation';
 import { Tag } from '@/_common/components/Tag';
 import { CountByCategory } from '@/utils/classifyPostsByCategory';
 
-type PostTitleProps = { countByCategory: CountByCategory };
+type PostTitleProps = { countByCategory: CountByCategory; count: number };
 
-export const PostTitle = ({ countByCategory }: PostTitleProps) => {
+export const PostTitle = ({ countByCategory, count }: PostTitleProps) => {
   const pathname = usePathname();
   const tag = decodeURIComponent(pathname.split('/')[2]);
 
-  const title: string = tag === 'undefined' ? 'All Posts' : tag;
-  const postsNumber: number = countByCategory[tag] || Object.values(countByCategory).reduce((a, b) => a + b, 0);
+  const title: string = tag !== 'undefined' ? tag : 'All Posts';
+  const postsNumber: number = countByCategory[tag] || count;
+
   const categorySubtitle = `${title} (${postsNumber})`;
 
   return (

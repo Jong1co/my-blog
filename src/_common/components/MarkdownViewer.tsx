@@ -48,6 +48,9 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
           ),
           strong: (props) => <span className="no-underline text-primary-60">{props.children}</span>,
           pre: (props) => <pre className="no-underline text-neutral-100">{props.children}</pre>,
+          li: (props) => <li className="no-underline text-neutral-100">{props.children}</li>,
+          ol: (props) => <ol className="no-underline text-neutral-100">{props.children}</ol>,
+          ul: (props) => <ul className="no-underline text-neutral-100">{props.children}</ul>,
         }}
       >
         {content}
