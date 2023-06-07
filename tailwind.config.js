@@ -6,6 +6,7 @@ module.exports = {
       screens: {
         mobile: '520px',
         web: '1180px',
+        post: '768px',
       },
       typography: (theme) => ({
         DEFAULT: {

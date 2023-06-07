@@ -26,12 +26,12 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             ) : (
-              <code {...props} className="p-1 mr-1 rounded-md bg-neutral-50 text-neutral-100 ">
+              <span {...props} className="px-2 py-1 mr-1 rounded-md bg-neutral-50 text-neutral-100 ">
                 {children}
-              </code>
+              </span>
             );
           },
-          img: (props) => <Image src={props.src || ''} alt={props.alt || ''} width={500} height={300} />,
+          img: (props) => <Image src={props.src || ''} alt={props.alt || ''} width={500} height={500} className="object-cover w-full" />,
           h1: (props) => <h1 className="text-neutral-100 ft-header-01">{props.children}</h1>,
           h2: (props) => <h2 className="text-neutral-100 ft-header-02">{props.children}</h2>,
           h3: (props) => <h3 className="text-neutral-100 ft-header-03">{props.children}</h3>,
@@ -46,6 +46,9 @@ export const MarkdownViewer = ({ content }: { content: string }) => {
           ),
           strong: (props) => <span className="no-underline text-primary-60">{props.children}</span>,
           pre: (props) => <pre className="no-underline text-neutral-100">{props.children}</pre>,
+          li: (props) => <li className="no-underline text-neutral-100">{props.children}</li>,
+          ol: (props) => <ol className="no-underline text-neutral-100">{props.children}</ol>,
+          ul: (props) => <ul className="no-underline text-neutral-100">{props.children}</ul>,
         }}
       >
         {content}

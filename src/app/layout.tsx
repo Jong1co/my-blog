@@ -4,8 +4,8 @@ import './globals.css';
 
 export const metadata = {
   title: {
-    default: 'Jonghyun',
-    template: 'Jonghyun | %s',
+    default: 'Jong1co',
+    template: 'Jong1co | %s',
   },
   description: '프론트엔드 개발자의 기록용 블로그',
   icons: {
