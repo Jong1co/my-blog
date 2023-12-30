@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 
-interface Datum {
+interface Data {
   label: string;
   value: number;
 }
@@ -10,7 +10,7 @@ const BarChart = () => {
     drawBarChart();
   }, []);
 
-  const data: Datum[] = [
+  const data: Data[] = [
     { label: 'A', value: 10 },
     { label: 'B', value: 20 },
     { label: 'C', value: 30 },
@@ -25,7 +25,7 @@ const BarChart = () => {
 
     // Setup
     const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-    const width = 960 - margin.left - margin.right;
+    const width = 500 - margin.left - margin.right;
     const height = 500 - margin.top - margin.bottom;
 
     const svg = d3
@@ -45,11 +45,15 @@ const BarChart = () => {
     const y = d3
       .scaleLinear()
       .range([height, 0])
-      .domain([0, d3.max(data, (d: Datum) => d.value) || 0]);
+      .domain([0, d3.max(data, (d: Data) => d.value) || 0]);
 
-    svg.append('g').attr('transform', `translate(0,${height})`).call(d3.axisBottom(x));
+    svg
+      .append('g')
+      .attr('transform', `translate(0,${height + 20})`)
+      .attr('stroke-width', 5)
+      .call(d3.axisBottom(x));
 
-    svg.append('g').call(d3.axisLeft(y));
+    svg.append('g').call(d3.axisLeft(y)).attr('display', 'block');
 
     svg
       .selectAll('.bar')
@@ -60,7 +64,14 @@ const BarChart = () => {
       .attr('x', (d) => x(d.label) || 0)
       .attr('y', (d) => y(d.value))
       .attr('width', x.bandwidth())
-      .attr('height', (d) => height - y(d.value));
+      .attr('height', (d) => height - y(d.value))
+      .attr('fill', function (d) {
+        return d.value > 20 ? 'red' : 'blue'; // 이 부분을 변경
+      })
+      // .attr('rx', 50) // x축 방향의 모서리 반경 설정
+      // .attr('ry', 50); // x축 방향의 모서리 반경 설정
+      .attr('rx', x.bandwidth() * 0.5) // y축 방향의 모서리 반경 설정
+      .attr('ry', x.bandwidth() * 0.5); // y축 방향의 모서리 반경 설정
   };
 
   return <div id="bar-chart"></div>;
