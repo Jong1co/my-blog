@@ -13,7 +13,7 @@ export type TOCElement = { title: string; scrollTop: number; indent: number };
 export const MarkdownViewer = ({ content }: { content: string }) => {
   return (
     <div className="relative">
-      <TOC content={content} />
+      {/* <TOC content={content} /> */}
       <ReactMarkdown
         className="max-w-3xl prose"
         remarkPlugins={[remarkGfm]}
