@@ -12,10 +12,10 @@ const info = [
     title: 'Github',
     link: 'https://github.com/Jong1co',
   },
-  {
-    title: 'Blog',
-    link: 'https://my-blog-jong1co.vercel.app/',
-  },
+  // {
+  //   title: 'Blog',
+  //   link: 'https://my-blog-jong1co.vercel.app/',
+  // },
 ];
 
 export const MyInfo = () => {
@@ -35,7 +35,7 @@ export const MyInfo = () => {
       <div className="flex mt-4 gap-y-8 mobile:gap-8 mobile:items-center">
         <Hero handleModal={handleContactModal} />
         <div className="flex flex-col gap-3 ft-header-02">
-          <h3 className="mb-3">____박종현입니다</h3>
+          <h3 className="mb-3">프론트엔드 개발자 박종현입니다</h3>
           <div className="mb-3 ft-body-02">
             <div className="mb-2">호기심이 많고, 매사에 긍정적 입니다.</div>
             <div>문제를 더 나은 방향으로 해결하고자 노력합니다.</div>

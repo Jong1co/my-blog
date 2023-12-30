@@ -6,8 +6,10 @@ import { usePathname } from 'next/navigation';
 const menu = [
   { title: 'Home', href: '/' },
   { title: 'Posts', href: '/posts' },
-  { title: 'About', href: '/about' },
+  // { title: 'Resume', href: 'https://www.rallit.com/resumes/4883@antoni0922/%EB%B0%95%EC%A2%85%ED%98%84' },
 ];
+
+const resume = 'https://www.rallit.com/resumes/4883@antoni0922/%EB%B0%95%EC%A2%85%ED%98%84';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -31,6 +33,11 @@ export const Header = () => {
               </li>
             );
           })}
+          <li>
+            <a target="_blank" href={resume} className={`text-neutral-50 hover:text-neutral-100 ease-in-out duration-150`}>
+              Resume
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
